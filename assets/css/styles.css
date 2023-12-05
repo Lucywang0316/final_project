@@ -39,7 +39,7 @@
     --font-medium: 500;
     --font-semi-bold: 600;
 
-    /*========== Margenes Bottom ==========*/
+    /*========== Margin Bottom ==========*/
     /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
     --mb-0-25: .25rem;
     --mb-0-5: .5rem;
@@ -117,19 +117,19 @@ img {
   padding: 2rem 0 4rem;
 }
 
-.section__title {
+.section_title {
   font-size: var(--h1-font-size);
   color: var(--title-color);
 }
 
-.section__subtitle {
+.section_subtitle {
   display: block;
   font-size: var(--small-font-size);
-  margin-bottom: var(--mb-3);
+  margin-bottom: var(--mb-1);
 }
 
-.section__title, 
-.section__subtitle {
+.section_title, 
+.section_subtitle {
   text-align: center;
 }
 
@@ -138,6 +138,12 @@ img {
   max-width: 768px;
   margin-left: var(--mb-1-5);
   margin-right: var(--mb-1-5);
+}
+
+@media screen and (min-width:767px) {
+  .container {
+    max-width: 90%;
+  }
 }
 
 .grid {
@@ -191,9 +197,28 @@ img {
     transition:0.3s;
   }
 }
+
+@media screen and (min-width:767px){
+  .nav {
+    max-width: 100% !important;
+  }
+  .nav_menu{
+    margin-left: auto;
+  }
+
+  .nav_list {
+    display: flex;
+  }
+
+  .nav_btns, .nav_close {
+    display: none;
+  }
+}
+
+
 .nav_list{
   grid-template-columns: repeat(3,1fr);
-  gap:2rem;
+  gap: 2rem;
 }
 .nav_link{
   display: flex;
@@ -239,6 +264,14 @@ img {
   padding-top:3.5rem;
   align-items:center;
 }
+
+@media screen and (min-width:767px){
+  .home_content {
+    grid-template-columns: .2fr 3fr;
+  }
+}
+
+
 .home_social{
   display:grid;
   grid-template-columns: max-content;
@@ -273,7 +306,7 @@ img {
   margin-bottom: var(--mb-0-75);
 }
 .home_description{
-  margin-bottom:var(--mb_2);
+  margin-bottom:var(--mb-2);
 }
 .home_scroll{
   display:none;
@@ -318,8 +351,13 @@ img {
   display: inline-flex;
 }
 /*==================== ABOUT ====================*/
+.about_container {
+  margin:  0 2rem;
+}
 .about_img{
   width: 200px;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: .5rem;
   justify-content: center;
   text-align: center;
@@ -332,7 +370,7 @@ img {
 .about_info{
   display: flex;
   justify-content:space-evenly;
-  margin-bottom: var(mb-2-5);
+  margin-bottom: var(--mb-2-5);
 }
 .about_info-name{
   font-size: var(--smaller-font-size);
@@ -434,4 +472,8 @@ img {
 }
 .skills_open .skills_arrow{
   transform: rotate (-180deg);
+}
+
+.footer_container {
+  padding-bottom: 2rem;
 }
